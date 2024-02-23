@@ -19,7 +19,7 @@ export default function App() {
 
   function toggleTodo(id, completed){
     setTodos(currentTodos =>{
-      currentTodos.map(todo=>{
+      return currentTodos.map(todo=>{
         if(todo.id === id){
           return {...todo, completed}
         }
