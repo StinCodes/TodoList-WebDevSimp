@@ -6,6 +6,7 @@ export default function App() {
   const [todos, setTodos] = useState([]);
 
   function handleSubmit(e) {
+    //prevent page reload when form submitted
     e.preventDefault();
     setTodos((currentTodos) => {
       return [
@@ -18,6 +19,7 @@ export default function App() {
   }
 
   function toggleTodo(id, completed){
+    //currentTodos is just current state of todos
     setTodos(currentTodos =>{
       return currentTodos.map(todo=>{
         if(todo.id === id){
@@ -49,6 +51,8 @@ export default function App() {
       </form>
       <h1 className="header">Todo List</h1>
       <ul className="list">
+{/*         conditional statement, if nothing in todos array then print "No todos" */}
+        {todos.length === 0 && "Nothing to do!"}
         {todos.map((todo) => {
           return (
             <li key={todo.id}>
